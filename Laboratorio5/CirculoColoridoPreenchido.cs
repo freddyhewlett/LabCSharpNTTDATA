@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace Laboratorio5
 {
@@ -16,12 +11,12 @@ namespace Laboratorio5
             cores = Color.Transparent;
         }
 
-        public CirculoColoridoPreenchido(double x, double y, double r, string c, Color cor) : base (x, y, r, c) //construtor com passagem de parametros
+        public CirculoColoridoPreenchido(double x, double y, double r, string c, Color cor) : base(x, y, r, c) //construtor com passagem de parametros
         {
             cores = cor;
         }
 
-        public CirculoColoridoPreenchido(double x, double y, double r) : base (x, y, r)     //construtor sem a passagem de parametro de cor
+        public CirculoColoridoPreenchido(double x, double y, double r) : base(x, y, r)     //construtor sem a passagem de parametro de cor
         {
             cores = Color.Aqua;
         }
