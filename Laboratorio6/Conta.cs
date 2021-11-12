@@ -5,12 +5,10 @@ namespace Laboratorio6
     {
         private decimal saldo;
         private string titular;
-        private string tipoConta;
 
-        public Conta (string nom, string tc)
+        public Conta (string nome)
         {
-            titular = nom;
-            tipoConta = tc;
+            titular = nome;
         }
 
         public decimal Saldo

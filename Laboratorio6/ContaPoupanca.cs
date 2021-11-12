@@ -5,12 +5,14 @@ namespace Laboratorio6
     public class ContaPoupanca : Conta
     {
         private decimal taxaJuros;
-        private DateTime dataAniversario;
+        private DateTime dataAniversarioConta;
+        private string tipoConta;
 
-        public ContaPoupanca(decimal j, DateTime d, string n, string tc) : base(n, tc)
+        public ContaPoupanca(decimal j, DateTime d, string n) : base(n)
         {
             taxaJuros = j;
-            dataAniversario = d;
+            dataAniversarioConta = d;
+            tipoConta = "Conta Poupança";
         }
 
         public decimal Juros
@@ -21,13 +23,13 @@ namespace Laboratorio6
 
         public DateTime DataAniversario
         {
-            get { return dataAniversario; }
+            get { return dataAniversarioConta; }
         }
 
         public void AdicionarRendimento()
         {
             DateTime hoje = DateTime.Now;
-            if (hoje.Day == dataAniversario.Day && hoje.Month == dataAniversario.Month)
+            if (hoje.Day == dataAniversarioConta.Day && hoje.Month == dataAniversarioConta.Month)
             {
                 decimal rendimento = this.Saldo * taxaJuros;
                 this.Depositar(rendimento);
@@ -36,7 +38,12 @@ namespace Laboratorio6
 
         public override string Id
         {
-            get { return this.Titular + "(CP)"; }
+            get { return this.Titular + "; " + tipoConta; }
+        }
+
+        public override string ToString()
+        {
+            return this.Id + "\n" + "Saldo: R$ " + string.Format(string.Format("{0:F2}", this.Saldo));
         }
     }
 }
