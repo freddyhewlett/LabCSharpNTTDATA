@@ -21,8 +21,15 @@ namespace Laboratorio10
                 switch (ops)
                 {
                     case 1:
-                        Console.Write("\nDigite o valor para aumentar a temperatura: ");                        
-                        term.Aumentar(double.Parse(Console.ReadLine()));
+                        if (term.Temperatura > limite)
+                        {
+                            Console.WriteLine("Temperatura acima do limite. Não é possivel aumentar mais.");
+                        }
+                        else
+                        {
+                            Console.Write("\nDigite o valor para aumentar a temperatura: ");                        
+                            term.Aumentar(double.Parse(Console.ReadLine()));
+                        }
                         break;
                     case 2:
                         Console.Write("\nDigite o valor para diminuir a temperatura: ");                        
