@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 
 namespace Laboratorio8
 {
@@ -15,9 +14,9 @@ namespace Laboratorio8
             minhaIdade = i;
         }
 
-        public void OrdenaIdade(bool o)
+        public void OrdenaIdade(bool ord)
         {
-            ordenaIdade = o;
+            ordenaIdade = ord;
         }
 
         public int CompareTo(Pessoa outro)
